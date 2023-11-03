@@ -1,0 +1,138 @@
+@import"./variables";
+@import"./mediaQuery";
+
+@mixin NAVBAR($txtcolor, $btnbg){
+  background-color:white;
+  height:80px;
+  padding-inline:5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  left:5%;
+  z-index:20;
+  strong{
+    font-size:$fonth2;
+    font-family:sans-serif;
+    font-weight:700;
+    a{
+      text-decoration:none;
+      color:$blackcolor;
+      i{
+        position:absolute;
+        top:1.85rem;
+        font-size:1.2rem;
+        color:$btnbg;
+        outline:4px solid $blackcolor;
+        outline-offset:-4px;
+        border-radius:50%;
+        margin-right:1rem;
+        &:last-child{
+          margin-left:21px;
+        }
+    }
+    }
+  }
+  .ri-menu-fill{
+    display:none;
+    color:$color2;
+    font-size:$fonth2;
+    @include mediaQuery(767px){
+      display:block;
+
+    }
+  }
+  div{
+    display:flex;
+    gap:1.8rem;
+    align-items:center;
+    a{
+      text-decoration:none;
+      color:$txtcolor;
+      font-size:$fontsp;
+      font-weight:600;
+      position:relative;
+      &::before{
+        content:"";
+        width:4px;
+        height:15px;
+        position:absolute;
+        top:0;
+        left:-5px;
+        background-color:$btnbg;
+        z-index:1;
+        display:none;
+      }
+      &:hover::before{
+        display:block;
+        @include mediaQuery(767px){
+          display:none;
+        }
+      }
+      &::after{
+        content:"";
+        width:8px;
+        height:8px;
+        position:absolute;
+        top:-2px;
+        left:-7px;
+        border-radius:30px;
+        background-color:$btnbg;
+        z-index:1;
+        display:none;
+      }
+      &:hover::after{
+        display:block;
+        @include mediaQuery(767px){
+          display:none;
+        }
+      }
+    }
+    button:first-of-type{
+      @include loginbtndesign($blackcolor, $maincolor);
+        margin:0;
+      @include mediaQuery(767px){
+        @include loginbtndesign(white, $color2);
+      }
+    }
+    button:last-of-type{
+      @include signupbtndesign($blackcolor, $maincolor);
+      @include mediaQuery(767px){
+        @include signupbtndesign(white, $color2);
+      }
+    }
+    @include mediaQuery(767px){
+      display:flex;
+      flex-direction:column;
+      position:absolute;
+      top:80px;
+      right:-100%;
+      height:100vh;
+      width:80%;
+      align-items:flex-start;
+      background-color: #252525;
+      padding: 8%;
+      transition:500ms;
+      a:hover{
+        color:$color2;
+      }
+      button:first-of-type{
+        position:absolute;
+        bottom:15%;
+        z-index:1;
+      }
+      button:last-of-type{
+        position:absolute;
+        bottom:15%;
+        right:5%;
+        z-index:1;
+      }
+    }
+  }
+  @include mediaQuery(767px){
+    .navbar.active{
+      right:0;
+    }
+  }
+}

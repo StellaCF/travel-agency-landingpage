@@ -1,0 +1,12 @@
+@use "sass:math";
+
+@mixin GRID($cols, $margin, $height){
+  height:$height;
+  width:math.div(100% - (($cols - 1) * $margin), $cols);
+  float:left;
+  margin-right:$margin;
+  &:nth-child(#{$cols}n){
+    margin-right:0;
+  }
+}
+

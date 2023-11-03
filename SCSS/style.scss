@@ -1,0 +1,241 @@
+@import"./variables";
+@import"./base";
+@import"./mixin";
+@import"./navbar";
+@import"./button";
+
+
+nav{
+  @include NAVBAR($blackcolor, $maincolor);
+  @include mediaQuery(767px){
+    @include NAVBAR(white, $maincolor);
+  }
+}
+
+header{
+  @include firstview($color2);
+  @include mediaQuery(1024px){
+    grid-template-columns: 1fr 1fr;
+    .imgCont{
+      height:500px;
+    }
+    main{
+      align-self:center;
+      h1{
+        font-size:3rem;
+      }
+    }
+  }
+  @include mediaQuery(767px){
+    grid-template-columns: 1fr;
+    .imgCont{
+      align-self:center;
+      width:100%;
+      height:80%;
+      grid-row: 1;
+      img{
+        object-fit: contain;
+      }
+    }
+    main{
+      h1{
+        font-size:$fonth2x;
+        font-weight:600;
+      }
+    }
+  }
+}
+
+div.dotted{
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+  padding:2rem;
+  img{
+    width:150px;
+    height:100px;
+    object-fit:cover;
+  }
+  @include mediaQuery(767px){
+    padding:10px 0;
+  }
+}
+
+section.services{
+  @include SERVICESECT;
+  main{
+    @include mediaQuery(1024px){
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+    }
+    @include mediaQuery(767px){
+      grid-template-columns: 1fr;
+      padding-inline:2rem;
+    }
+  }
+}
+
+section.destination{
+  @include DESTSECT;
+  main{
+    @include mediaQuery(1024px){
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+      div:last-child{
+        display:none;
+      }
+    }
+    @include mediaQuery(767px){
+      grid-template-columns:1fr;
+      gap:2rem;
+      div:not(:first-child){
+        display:none;
+      }
+    }
+  }
+}
+
+section.bookings{
+  @include CTA;
+  @include mediaQuery(767px){
+    flex-wrap: wrap-reverse;
+    .text{
+      width:100%;
+      h2{
+        font-size:$fonth2;
+      }
+    }
+    .imgContainer{
+      width:85%;
+      >div{
+        right:-20%;
+      }
+    }
+  }
+}
+
+section.testimony{
+  @include TESTSECT;
+  @include mediaQuery(767px){
+    grid-template-columns: 1fr;
+    gap:2rem;
+    div:first-child{
+      h2{
+        font-size:$fonth2;
+      }
+    }
+  }
+}
+
+section.brands{
+  display:flex;
+  justify-content: space-between;
+  padding-block:6rem;
+  img{
+    width:9%;
+    @include mediaQuery(1024px){
+      width:12%;
+      &:last-child, &:nth-last-child(2){
+        display:none;
+      }
+    }
+    @include mediaQuery(767px){
+      width:20%;
+      &:nth-last-child(3){
+        display:none;
+      }
+    }
+  }
+  
+}
+
+section.subscription{
+  @include SUBSECT;
+  form{
+    @include mediaQuery(767px){
+      flex-direction:column;
+      input{
+        height:40px;
+      }
+    }
+  }
+}
+
+section.prefoot{
+  margin-top:10rem;
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:2rem;
+  div:first-child{
+    h3{
+      font-size:$fonth2x;
+      font-weight:600;
+      font-family:sans-serif;
+      a{
+        text-decoration:none;
+        color:$color2;
+      }
+    }
+    p{
+      font-size:$fontsp;
+    }
+  }
+  div:not(:first-child){
+    display:grid;
+    p{
+      font-size:$fontp;
+      margin-bottom:1rem;
+    }
+    a{
+      font-size:$fontsp;
+      color:$color2;
+      margin-bottom:5px;
+    }
+  }
+  div:last-child{
+    justify-self:center;
+    a{
+      text-decoration:none;
+      i{
+        font-size:$fontsp;
+        padding:7px;
+        border:1px solid #b8b5b5;
+        border-radius:30px;
+        margin-right:5px;
+        color:$blackcolor;
+    }
+    }
+    p{
+      font-size:$fontsp;
+      text-align:center;
+      @include mediaQuery(1024px){
+        margin-top:15px;
+      }
+    }
+    img{
+      margin-top:-2rem;
+      width:80px;
+      margin-inline:auto;
+      @include mediaQuery(1024px){
+        margin-top:10px;
+      }
+    }
+  }
+  @include mediaQuery(1024px){
+    grid-template-columns:repeat(3, 1fr);
+    row-gap:3rem;
+  }
+  @include mediaQuery(767px){
+    grid-template-columns: 1fr;
+  }
+}
+
+footer{
+  margin-top:6rem;
+  height:80px;
+  display:grid;
+  place-items:center;
+  font-size:$fontsp;
+  background-color:$color2;
+  color:white;
+}
