@@ -1,5 +1,6 @@
 @import"./variables";
 @import"./mediaQuery";
+@import"./base";
 
 @mixin NAVBAR($txtcolor, $btnbg){
   background-color:white;
