@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz@1,5..1200&family=Poppins&family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz@1,5..1200&family=Poppins&family=Roboto:wght@300&display=swap");
 *,
 *::before,
 *::after {
@@ -12,7 +11,7 @@
 body {
   width: 100%;
   height: auto;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-family: sans-serif;
 }
 
@@ -47,28 +46,6 @@ section:not(:nth-last-of-type(2)) {
             transform: scale(1);
   }
 }
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  width: 100%;
-  height: auto;
-  overflow-x: hidden;
-  font-family: sans-serif;
-}
-
-header,
-section:not(:nth-last-of-type(2)) {
-  width: 90%;
-  margin-inline: auto;
-}
-
 nav {
   background-color: white;
   height: 80px;
@@ -84,7 +61,7 @@ nav {
           align-items: center;
   position: sticky;
   top: 0;
-  left: 5%;
+  left: 0;
   z-index: 20;
 }
 nav strong {
@@ -294,11 +271,11 @@ nav div button:last-of-type:hover::before {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: -100%;
     height: 100vh;
-    width: 80%;
+    width: 100%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -313,12 +290,13 @@ nav div button:last-of-type:hover::before {
   nav div button:first-of-type {
     position: absolute;
     bottom: 15%;
+    left: 0%;
     z-index: 1;
   }
   nav div button:last-of-type {
     position: absolute;
     bottom: 15%;
-    right: 5%;
+    right: 25%;
     z-index: 1;
   }
 }
@@ -343,7 +321,7 @@ nav div button:last-of-type:hover::before {
             align-items: center;
     position: sticky;
     top: 0;
-    left: 5%;
+    left: 0;
     z-index: 20;
   }
   nav strong {
@@ -562,11 +540,11 @@ nav div button:last-of-type:hover::before {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: -100%;
     height: 100vh;
-    width: 80%;
+    width: 100%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -581,12 +559,13 @@ nav div button:last-of-type:hover::before {
   nav div button:first-of-type {
     position: absolute;
     bottom: 15%;
+    left: 0%;
     z-index: 1;
   }
   nav div button:last-of-type {
     position: absolute;
     bottom: 15%;
-    right: 5%;
+    right: 25%;
     z-index: 1;
   }
 }
@@ -601,6 +580,7 @@ header {
   display: grid;
   -ms-grid-columns: 1.5fr 1fr;
   grid-template-columns: 1.5fr 1fr;
+  margin-top: 4rem;
 }
 header main {
   display: -ms-grid;

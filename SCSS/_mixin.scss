@@ -7,6 +7,7 @@
 @mixin firstview($txtcolor){
   display:grid;
   grid-template-columns:1.5fr 1fr;
+  margin-top: 4rem;
   main{
     display:grid;
     gap:1.5rem;
